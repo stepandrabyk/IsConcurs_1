@@ -1,0 +1,36 @@
+﻿@model IscConcursLr1.Faculties
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Видалити</h1>
+
+<h3>Ви впевнені?</h3>
+<div>
+    <h4>Faculties</h4>
+    <hr />
+    <dl class="row  text-secondary">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FacultiesUniversityNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FacultiesUniversityNavigation.Name)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+
+
+        <input type="hidden" asp-for="FacultiesId" />
+
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
